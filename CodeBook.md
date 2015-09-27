@@ -130,13 +130,11 @@ SubAct <- cbind(allSubject, allActivity)
 Alldata <- cbind(allFeature,SubAct)
 ```
 
-
-*Check the new data set (`Alldata`):* 
+*Check the new data set (`Alldata`):*  
 ```{r, eval=FALSE}
 str(Alldata)
 ```
-
-
+The result should start with `'data.frame':	10299 obs. of  563 variables:` and a list of variables with class and data starting from `$ tBodyAcc-mean()-X` .  
 
 
 #### 4. (Q2) Show only the measurement on the mean and standard deviation (std) for each measurement
@@ -155,6 +153,8 @@ varmeanstd <- grep("mean|std", Varnames$V2, ignore.case = TRUE, value=TRUE)
 ```{r, eval=FALSE}
 str(varmeanstd)
 ```
+
+The result should be shown in one line with `char [1:86]  "tBodyAcc-mean()-X"` ... .    
 
 
 #### 5. (Q3) Use descriptive activity names to name the activities in the data set
@@ -179,6 +179,7 @@ for (i in 1:6)
 ```{r, eval=FALSE}
 head(Alldata,3)
 ```
+The result should show three 'STANDING` as the values of `activity` at the very last column.  
 
 
 #### 6.(Q4) Appropriately labels the dataset with discriptive varialbe names
@@ -218,6 +219,8 @@ names(Alldata) <- gsub("BodyBody", "Body", names(Alldata))
 ```{r, eval=FALSE}
 names(Alldata)
 ```
+The result should show 563 rows of the new variable names starting from `"TimeBodyAccelerometer-mean()-X"`.  
+
 
 #### 6.(Q5) With the dataset created in Q4,create a second, independent tidy dataset with average of each variable for each activity and each subject
 
@@ -228,7 +231,15 @@ Alltidydata <- aggregate(. ~subject + activity, Alldata, mean)
 Alltidydata <- Alltidydata[order(Alltidydata$subject, Alltidydata$activity),]
 ```
 
+
+
 *Check the result:* 
 ```{r, eval=FALSE}
 head(Alltidydata,3)
+```
+The result should show the values in the first three rows (1,31,61) with variable names from `subject` to `angle(Z,Gravity-mean())`   
+
+#### Save the results in the txt format
+```{r, eval=FALSE}
+write.table(Alltidydata, file="tidydata.txt", row.names = FALSE)
 ```
