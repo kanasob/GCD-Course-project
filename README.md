@@ -19,7 +19,9 @@ Requirement :
 5) a R script in the repository (run_analysis.R)
 
 Dataset
-Data Source: data collected from the accelerometers from the Samsung Galaxy S smartphone. For details, see the following link: 
+Data Source: 
+
+Data collected from the accelerometers from the Samsung Galaxy S smartphone. For details, see the following link: 
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
@@ -27,7 +29,7 @@ The link to the data for the project:
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
-Requirment for R script 
+Requirement for R script 
 
 The R script should perform the following:
 
