@@ -179,7 +179,7 @@ for (i in 1:6)
 ```{r, eval=FALSE}
 head(Alldata,3)
 ```
-The result should show three 'STANDING` as the values of `activity` at the very last column.  
+The result should show three valuse (`STANDING`) in the `activity` column.  
 
 
 #### 6.(Q4) Appropriately labels the dataset with discriptive varialbe names
